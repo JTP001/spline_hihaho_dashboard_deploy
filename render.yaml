@@ -1,10 +1,9 @@
 services:
   - type: web
     name: hihaho-backend
-    env: docker
-    runtime: docker
-    docker:
-      image: jtp001/hihaho-dashboard-backend:latest
+    runtime: image
+    image:
+      url: docker.io/jtp001/hihaho-dashboard-backend:latest
     envVars:
       - fromDotEnv: API_KEY
       - fromDotEnv: DATABASE_URL
@@ -16,10 +15,9 @@ services:
 
   - type: web
     name: hihaho-frontend
-    env: docker
-    runtime: docker
-    docker:
-      image: jtp001/hihaho-dashboard-frontend:latest
+    runtime: image
+    image:
+      url: docker.io/jtp001/hihaho-dashboard-frontend:latest
     envVars:
       - fromDotEnv: REACT_APP_API_URL
       - key: PORT
