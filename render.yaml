@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: hihaho-backend
+    env: docker
+    image: ghcr.io/jtp001/hihaho-dashboard-backend:latest
+    envVars:
+      - fromDotEnv: API_KEY
+      - fromDotEnv: DATABASE_URL
+      - fromDotEnv: DJANGO_ALLOWED_HOSTS
+      - fromDotEnv: REACT_APP_API_URL
+      - fromDotEnv: USE_SQL
+      - key: PORT
+        value: 8000
+
+  - type: web
+    name: hihaho-frontend
+    env: docker
+    image: ghcr.io/jtp001/hihaho-dashboard-frontend:latest
+    envVars:
+      - fromDotEnv: REACT_APP_API_URL
+      - key: PORT
+        value: 80
