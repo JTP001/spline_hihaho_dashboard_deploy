@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  backend:
+    image: ghcr.io/jtp001/hihaho-dashboard-backend:latest
+    env_file:
+      - .env
+    depends_on:
+      - frontend
+    ports:
+      - "8000"  # Optional for Render, see below
+
+  frontend:
+    image: ghcr.io/jtp001/hihaho-dashboard-frontend:latest
+    env_file:
+      - .env
+    depends_on:
+      - backend
+    ports:
+      - "80"  # Optional for Render
