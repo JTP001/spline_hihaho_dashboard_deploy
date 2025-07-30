@@ -1,6 +1,7 @@
 services:
   - type: web
     name: hihaho-backend
+    plan: free
     runtime: image
     image:
       url: docker.io/jtp001/hihaho-dashboard-backend:latest
@@ -18,6 +19,7 @@ services:
 
   - type: web
     name: hihaho-frontend
+    plan: free
     runtime: image
     image:
       url: docker.io/jtp001/hihaho-dashboard-frontend:latest
